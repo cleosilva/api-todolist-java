@@ -3,10 +3,12 @@ package edu.api.todolist.service;
 import edu.api.todolist.model.Task;
 import edu.api.todolist.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class TaskService {
     @Autowired
     private TaskRepository taskRepository;
