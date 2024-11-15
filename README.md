@@ -25,7 +25,7 @@ Este projeto é uma API de lista de tarefas (ToDo List) construída com Spring B
 Clone este repositório no seu ambiente local:
 
 ```bash
-git clone https://github.com/seu-usuario/todolist-api.git
+git clone https://github.com/cleosilva/api-todolist-java.git
 ```
 ### 2. Instalando as Dependências
 Dentro da pasta do projeto, execute:
@@ -92,28 +92,29 @@ A aplicação estará rodando em http://localhost:8080.
 * Headers: Authorization: Bearer <seu-token-jwt-aqui>
 
 ### 5.Configuração do Banco de Dados
-   Este projeto usa o H2 Database em memória, o que significa que os dados são descartados quando a aplicação é reiniciada. Se preferir usar um banco de dados persistente, você pode configurar o application.properties para conectar a um banco como MySQL ou PostgreSQL.
+Este projeto usa o H2 Database em memória, o que significa que os dados são descartados quando a aplicação é reiniciada. Se preferir usar um banco de dados persistente, você pode configurar o application.properties para conectar a um banco como MySQL ou PostgreSQL.
 
 ### 6. Como Funciona
-   Registro de Usuário: O usuário fornece um nome de usuário e uma senha. A senha é criptografada com BCrypt antes de ser salva no banco de dados.
-   Login de Usuário: O usuário autentica suas credenciais (nome de usuário e senha) e, se bem-sucedido, um token JWT é gerado e retornado.
-   Acesso às Tarefas: O token JWT gerado no login deve ser enviado em todas as requisições subsequentes (como criação, leitura, atualização e exclusão de tarefas) no cabeçalho Authorization.
+* Registro de Usuário: O usuário fornece um nome de usuário e uma senha. A senha é criptografada com BCrypt antes de ser salva no banco de dados.
+* Login de Usuário: O usuário autentica suas credenciais (nome de usuário e senha) e, se bem-sucedido, um token JWT é gerado e retornado.
+* Acesso às Tarefas: O token JWT gerado no login deve ser enviado em todas as requisições subsequentes (como criação, leitura, atualização e exclusão de tarefas) no cabeçalho Authorization.
 
 ### 7. Estrutura de Diretórios
-   src/main/java/edu/api/todolist/: Código-fonte Java do projeto.
-   controller/: Contém os controladores REST (como AuthController e TaskController).
-   model/: Contém as entidades JPA (User, Task).
-   repository/: Repositórios JPA para acesso ao banco de dados.
-   security/: Configurações de segurança, como JWT e Spring Security.
-   service/: Lógica de negócios, como autenticação de usuários e gerenciamento de tarefas.
-   src/main/resources/: Configurações da aplicação (como application.properties).
+* src/main/java/edu/api/todolist/: Código-fonte Java do projeto.
+* controller/: Contém os controladores REST (como AuthController e TaskController).
+* model/: Contém as entidades JPA (User, Task).
+* repository/: Repositórios JPA para acesso ao banco de dados.
+* security/: Configurações de segurança, como JWT e Spring Security.
+* service/: Lógica de negócios, como autenticação de usuários e gerenciamento de tarefas.
+* src/main/resources/: Configurações da aplicação (como application.properties).
 
 ### 8. Configuração de Segurança (Spring Security)
-   A segurança é configurada para desabilitar CSRF (não necessário para APIs REST).
-   A autenticação é feita via JWT, e os endpoints de tarefas exigem que o usuário esteja autenticado com um token válido.
-   A sessão é gerenciada de forma stateless (sem estado), o que significa que o servidor não mantém informações sobre o estado do usuário entre as requisições.
-   Contribuição
-   Sinta-se à vontade para fazer contribuições! Caso encontre algum bug ou tenha sugestões de melhorias, por favor, abra uma issue ou envie um pull request.
+* A segurança é configurada para desabilitar CSRF (não necessário para APIs REST).
+* A autenticação é feita via JWT, e os endpoints de tarefas exigem que o usuário esteja autenticado com um token válido.
+* A sessão é gerenciada de forma stateless (sem estado), o que significa que o servidor não mantém informações sobre o estado do usuário entre as requisições.
+
+## Contribuição
+Sinta-se à vontade para fazer contribuições! Caso encontre algum bug ou tenha sugestões de melhorias, por favor, abra uma issue ou envie um pull request.
 
 ## Licença
 Este projeto é licenciado sob a licença MIT. 
